@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.cairobones.mapper.bonesMapper">
+    <!--회원가입-->
+    <insert id="bonesJoin" parameterType="com.smhrd.cairobones.VO.tbl_doctor">
+        INSERT INTO tbl_doctor(doctor_id, doctor_pw, doctor_name, doctor_license, license_date)
+        VALUES(#{id}, #{pw}, #{name}, #{license}, #{license_date})
+    </insert>
+
+</mapper>
