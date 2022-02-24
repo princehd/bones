@@ -56,6 +56,7 @@ body {
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 0.8rem;
 }
+
 #nav_gender {
     height: 100%;
 }
@@ -80,7 +81,7 @@ body {
 .sidebar_left {
     display: flex;
     justify-content: center;
-    width: 6vw;
+    width: 3vw;
     height: 100vh;
     background-color: #323232;
 }
@@ -100,6 +101,7 @@ body {
     margin: 0 auto;
     padding: 10px 0 10px;
     color: whitesmoke;
+    font-size: 1.6rem !important
 }
 
 .i_btn {
@@ -108,37 +110,32 @@ body {
 }
 
 .sidebar_right {
+    display: flex;
     flex-flow: column wrap;
     margin-left: auto;
     background-color: #323232;
+    width: 25vw;
 }
 
 #sideTabMenu {
     list-style: none;
 }
 
-.sidebar_right {
-    display: flex;
-    width: 20vw;
-}
 .side_btn {
     display: flex;
     margin: 0 auto;
     margin-top: 10%;
 }
+
 .btn_ai {
-    padding: 0.6vmax 3vmax 0.6vmax 3vmax;
-    font-size: 1.2rem;
+    padding: 0.6vmax 5vmax 0.6vmax 5vmax;
+    font-size: 1.6rem;
     border-radius: 5px;
     font-family: 'Poppins';
     font-weight: 700;
     background-color: whitesmoke;
     border: none;
     color: #323232;
-    /* 수정 필요 */
-    /* white-space: pre-wrap;
-    text-overflow: clip;
-    text-overflow: wrap; */
 }
 
 .btn_ai:hover {
@@ -152,10 +149,11 @@ body {
     display: flex;
     position: absolute;
     margin-top: 8%;
-    width: 20vw;
+    width: 25vw;
     height: 100vh;
     text-decoration: none;
 }
+
 .tab_btn {
     display: flex;
     width: 100%;
@@ -163,16 +161,19 @@ body {
     padding: 0;
     font-family: 'SpoqaHanSansNeo-Regular';
 }
+
 .tab_btn li {
     float: left;
     margin: 0 auto;
 }
+
 .tab_menu .tab_btn .tab_btns {
     display: felx;
     font-size:13px;
     text-decoration: none;
     color: whitesmoke;
 }
+
 .tab_menu .tab_btn .tab_cont {
     display: none;
     position:absolute;
@@ -184,10 +185,12 @@ body {
     text-align:center;
     line-height:100%;
 }
+
 .tab_menu .tab_btn li.tab_menus .tab_btns {
     font-weight: bold;
     color: #888;
 }
+
 .tab_menu .tab_btn li.tab_menus .tab_cont {
     display:block;
 }
