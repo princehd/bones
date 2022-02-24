@@ -20,16 +20,15 @@ public class bonesService {
     @Autowired
     bonesMapper mapper;
 
+    public void doJoin(tbl_doctor tbl_doctor) {
+    }
+
     public void bonesJoin(tbl_doctor tbl_doctor){
-        tbl_doctor.setDoctor_id("id");
-        tbl_doctor.setDoctor_pw("pw");
-        tbl_doctor.setDoctor_name("name");
-        tbl_doctor.setDoctor_license("doctor_license");
-        tbl_doctor.setLicense_date("license_date");
-        tbl_doctor.setDoctor_joindate(localTime);
         mapper.bonesJoin(tbl_doctor);
     }
 
-    public void doJoin(tbl_doctor tbl_doctor) {
+    public tbl_doctor bonesLogin(tbl_doctor tbl_doctor) {
+        tbl_doctor doctorVo = mapper.bonesLogin(tbl_doctor);
+        return doctorVo;
     }
 }

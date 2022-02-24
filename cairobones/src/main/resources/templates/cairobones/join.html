@@ -5,13 +5,13 @@
     <title>cairobones_회원가입</title>
 </head>
 <body>
-<form action="/bonesJoin">
-아이디<input type="text" name="id">
-비밀번호<input type="password" name="pw">
-이름<input type="text" name="name">
-의사면허번호<input type="text" name="doctor_license">
-면허취득일<input type="date" name="license_date">
-    <button type="submit">가입</button>
-</form>
+    <form action="/doJoin" method="post">
+        아이디<input type="text" name="doctor_id">
+        비밀번호<input type="password" name="doctor_pw">
+        이름<input type="text" name="doctor_name">
+        의사면허번호<input type="text" name="doctor_license">
+        면허취득일<input type="date" name="license_date">
+        <button type="submit">가입</button>
+    </form>
 </body>
 </html>

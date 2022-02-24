@@ -6,11 +6,9 @@ import com.smhrd.cairobones.service.bonesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.swing.*;
 
 @Controller
@@ -20,14 +18,28 @@ public class bonesController {
     @Autowired
     bonesService service;
 
-    @GetMapping("/join")
-    public String bonesJoin(){
-        return "/join";
+    @RequestMapping("/join")
+    private String doJoin(){
+        return "/cairobones/join";
     }
 
-    @PostMapping("/doJoin")
-    private String doJoin(tbl_doctor tbl_doctor){
-        service.doJoin(tbl_doctor);
-        return "redirect:/login";
+    @RequestMapping(value = "/doJoin", method = {RequestMethod.POST})
+    private String bonesJoin(tbl_doctor tbl_doctor){
+        service.bonesJoin(tbl_doctor);
+        return "/cairobones/login";
+    }
+
+    @RequestMapping("/login")
+    private String doLogin(){
+        return "/cairobones/login";
+    }
+
+    @RequestMapping(value = "/doLogin", method = {RequestMethod.POST})
+    private String bonesLogin(tbl_doctor tbl_doctor, HttpSession session){
+        tbl_doctor doctorVo = service.bonesLogin(tbl_doctor);
+        if(doctorVo != null){
+            session.setAttribute("doctorVo", doctorVo);
+        }
+        return "redirect:/join";
     }
 }

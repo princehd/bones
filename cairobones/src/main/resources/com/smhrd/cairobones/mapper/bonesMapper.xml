@@ -9,7 +9,7 @@
     </insert>
 
     <!--로그인-->
-    <select id="login"  resultType="com.smhrd.cairobones.VO.tbl_doctor">
+    <select id="bonesLogin"  resultType="com.smhrd.cairobones.VO.tbl_doctor">
         SELECT * FROM tbl_doctor WHERE doctor_id=#{doctor_id} AND doctor_pw=#{doctor_pw}
     </select>
 

@@ -5,5 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface bonesMapper {
-    void bonesJoin(tbl_doctor vo);
+    void bonesJoin(tbl_doctor tbl_doctor);
+    tbl_doctor bonesLogin(tbl_doctor tbl_doctor);
 }
