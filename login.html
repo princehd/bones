@@ -11,24 +11,36 @@
             rel="stylesheet">
     </head>
     <body>
-        <div id="login" class="login">
-            <div id="loginBox" class="login_box">
-                <div class="login_input">
-                    <form>
-                        <label for="email" class="login_form">
-                            Email address
-                        </label>
-                    </form>
-                    <div id="login_email" class="login_form">
-                        <input type="text" id="email" class="login_input" required="required" placeholder="id@example.com">
+        <main class="login_page">
+            <div class="login_box">
+                <div class="login__box">
+                    <div class="login_title">
+                        ChiroBones
                     </div>
-                </div>
-                <div id="loginBtn" class="login_btn">
-                    <button class="login_btn">
-                        Login
-                    </button>
+                    <form action="" method="">
+                        <div class="login_form">
+                            <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                class="login_input"
+                                required="required"
+                                aria-label="이메일"
+                                placeholder="id@example.com">
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="login_input"
+                                required="required"
+                                aria-label="비밀번호"
+                                placeholder="password">
+                            <button id="loginBtn" class="login_btn" aria-label="로그인">Login</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
+<!-- placeholder="id@example.com" -->
