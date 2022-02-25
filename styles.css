@@ -18,31 +18,60 @@ body {
 /* start_login */
 .login {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap ;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    padding: 3rem 1.5rem 3rem 1.5rem;
 }
+
 .login_box {
-    width: 28rem;
-    height: 500px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
+    min-height: 400px;
+    max-width: 80vw;
+    max-height: 90vh;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.05);
     background-color: #323232;
 }
+
+.login_form {
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.login_input {
+    font-size: 1rem;
+    padding: 0.3rem 0.3rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.login_btn {
+    font-size: 1rem;
+    padding: 0.3rem 2rem;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    background-color: whitesmoke;
+    border: none;
+    color: #323232;
+}
+/* login_end */
 /* start__header */
 .header {
-    z-index: 99;
-    box-shadow: rgb(0, 0, 0, 0.5) 0 10px 10px 0;
     background-color: #323232;
+    box-shadow: 0 10px 10px 0 rgb(0, 0, 0, 0.5);
+    position: relative;
 }
 /* start__navbar */
 .navbar {
     height: 100%;
     width: 100%;
-    background-color: #323232;
 }
 
 .nav_info {
