@@ -67,7 +67,7 @@ body {
     font-size: 1rem;
     padding: 0.3rem 0.3rem;
     color: whitesmoke;
-    border-color: #323232;
+    border: 1px solid #323232;
 }
 
 .login_input:focus{
