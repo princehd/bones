@@ -54,7 +54,7 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 366px;
 }
 
 .login_title {
@@ -68,7 +68,7 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width:100%;
 }
 
 .login_input {
