@@ -52,16 +52,16 @@ body {
 .login_inner {
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: ;
     align-items: center;
     width:100%;
 }
 
 .login_title {
     color: whitesmoke;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
 }
 /* start_login input */
 .login_form {
@@ -103,16 +103,13 @@ body {
     display: flex;
     justify-content: center;
     width: 366px;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 .login_btns {
     margin: 0 0.5rem 0 0.5rem;
-    margin-top: 1rem;
     padding: 0.3rem 1rem 0.3rem 1rem;
-    text-align: center;
     font-size: 0.8rem;
-    padding: ;
     border-radius: 5px;
     font-weight: 700;
     background-color: whitesmoke;
