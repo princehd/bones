@@ -9,6 +9,7 @@
         <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
+
     </head>
     <body>
         <main class="login_page">
@@ -36,12 +37,20 @@
                                     required="required"
                                     aria-label="비밀번호"
                                     placeholder="password">
-                                <button
-                                    type="submit"
-                                    formmethod="post"
-                                    id="loginBtn"
-                                    class="login_btn"
-                                    aria-label="로그인">Login</button>
+                                <span class="loginBtn_area">
+                                    <button
+                                        type="submit"
+                                        formmethod="post"
+                                        id="joinBtn"
+                                        class="login_btns"
+                                        aria-label="가입">Sign up</button>
+                                    <button
+                                        type="submit"
+                                        formmethod="post"
+                                        id="loginBtn"
+                                        class="login_btns"
+                                        aria-label="로그인">Sign in</button>
+                                </span>
                             </div>
                         </form>
                     </div>
