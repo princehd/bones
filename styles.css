@@ -79,6 +79,7 @@ body {
 }
 
 .login_form input {
+    box-sizing: border-box;
     width: 366px;
     height: 44px;
     padding: 0.3rem 1rem 0.3rem 1rem;
@@ -99,7 +100,7 @@ body {
 
 .login_form label {
     position: absolute;
-    left: 4.5rem;
+    left: 5.5rem;
     font-size: 1rem;
     color: #999;
     transition: all 1s ease;
@@ -120,7 +121,6 @@ body {
 .loginBtn_area {
     display: flex;
     justify-content: center;
-    width: 366px;
     margin-top: 1rem;
 }
 
@@ -134,6 +134,7 @@ body {
     border: none;
     color: #323232;
     font-family: 'SpoqaHanSansNeo-Regular', "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    cursor: pointer;
 }
 /* login button__end */
 /* login.html_end */
@@ -221,7 +222,7 @@ body {
     align-content: center;
     margin-top: 10px;
     padding: 0;
-    max-height: 100vh
+    max-height: 100vh;
     list-style: none;
 }
 
@@ -236,6 +237,7 @@ body {
 .i_btn {
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .sidebar_right {
@@ -266,6 +268,7 @@ body {
     background-color: whitesmoke;
     border: none;
     color: #323232;
+    cursor: pointer;
 }
 
 .btn_ai:hover {
