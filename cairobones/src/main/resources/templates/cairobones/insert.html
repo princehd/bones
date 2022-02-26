@@ -5,6 +5,12 @@
     <title>파일업로드</title>
 </head>
 <body>
-
+    <form action="/fileUpload" method="post" enctype="multipart/form-data" th:object=${tbl_patientVO} th:action="@{/fileUpload}">
+        <input type="text" name="p_code" placeholder="환자코드"><br>
+        <input type="text" name="p_name" placeholder="환자 이름"><br>
+        <input type="date" name="p_birthdate" placeholder="환자 생년월일"><br>
+        <input type="file" name="p_xray"><br>
+        <input type="submit" value="사진업로드">
+    </form>
 </body>
 </html>

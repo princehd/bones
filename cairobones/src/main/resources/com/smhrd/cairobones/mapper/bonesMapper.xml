@@ -3,14 +3,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.cairobones.mapper.bonesMapper">
     <!--회원가입-->
-    <insert id="bonesJoin" parameterType="com.smhrd.cairobones.VO.tbl_doctor">
+    <insert id="bonesJoin" parameterType="com.smhrd.cairobones.VO.tbl_doctorVO">
         INSERT INTO tbl_doctor(doctor_id, doctor_pw, doctor_name, doctor_license, license_date)
         VALUES(#{doctor_id}, #{doctor_pw}, #{doctor_name}, #{doctor_license}, #{license_date})
     </insert>
 
     <!--로그인-->
-    <select id="bonesLogin"  resultType="com.smhrd.cairobones.VO.tbl_doctor">
+    <select id="bonesLogin"  resultType="com.smhrd.cairobones.VO.tbl_doctorVO">
         SELECT * FROM tbl_doctor WHERE doctor_id=#{doctor_id} AND doctor_pw=#{doctor_pw}
     </select>
 
+    <!--환자 엑스레이 업로드-->
+    <insert id="fileUpload" parameterType="com.smhrd.cairobones.VO.tbl_patientVO">
+        INSERT INTO tbl_patient(p_code, p_name, p_birthdate, p_xray)
+        VALUE(#{p_code},#{p_name},#{p_birthdate},#{p_xray})
+    </insert>
+
+    <!--환자 엑스레이 불러오기-->
+    <select id="openFile" parameterType="int" resultType="com.smhrd.cairobones.VO.tbl_patientVO">
+        SELECT * FROM tbl_patient WHERE p_seq=#{p_seq}
+    </select>
 </mapper>

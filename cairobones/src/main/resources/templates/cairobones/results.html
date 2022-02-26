@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <% @taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+</head>
+<body>
+<h1>file view</h1>
+<!--<form role="form" th:object="${tbl_patient}" th:action="@{/fileView}" method="post">-->
+    <div class="container">
+        <table class="table" th:each="tbl_patient">
+            <thead>
+            <tr>
+                <th>환자번호</th>
+                <th>이름</th>
+                <th>생년월일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <!--/*@thymesVar id="data" type="com.smhrd.cairobones.VO.tbl_patientVO"*/-->
+                <td th:text="${data.p_no}"></td>
+                <td th:text="${data.p_name}"></td>
+                <td th:text="${data.p_birth}"></td>
+            </tr>
+            </tbody>
+            <thead>
+            <tr>
+                <th colspan="3">x-ray</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <!--/*@thymesVar id="data" type="com.smhrd.cairobones.VO.tbl_patientVO"*/-->
+                <!--/*@thymesVar id="p_xray" type="String"*/-->
+                <td colspan="3" th:text="${data.p_xray}">photo</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<!--</form>-->
+
+</body>
+</html>

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class tbl_doctor {
+public class tbl_doctorVO {
     private String doctor_id;
     private String doctor_pw;
     private String doctor_name;
