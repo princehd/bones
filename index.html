@@ -47,6 +47,17 @@
         <sidebar id="sidebar" class="sidebar">
             <div id="sideLeft" class="sidebar_left">
                 <ul id="leftIcon" class="sidebar_i">
+                    <li id="image_upload" class="menu_i">
+                        <label for="uploader" class="uploader">
+                            <input type="file" id="uploader" style="display: none" />
+                            <i class="material-icons">add_photo_alternate</i>
+                        </label>
+                    </li>
+                    <li id="coordinate" class="menu_i">
+                        <button class="i_btn">
+                            <i class="material-icons">grid_4x4</i>
+                        </button>
+                    </li>
                     <li id="i_point" class="menu_i">
                         <button class="i_btn">
                             <i class="material-icons">adjust</i>
@@ -99,8 +110,7 @@
         </sidebar>
         <!-- Canvas -->
         <main class="canvas">
-            <!-- <canvas id="boneCanvas" class="boneCanvas"></canvas> <div
-            class="canvasControls"></div> -->
+            <canvas id="boneCanvas" class="boneCanvas"></canvas>
         </main>
         <script src="app.js"></script>
     </body>
