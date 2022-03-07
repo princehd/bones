@@ -49,7 +49,7 @@
                 <ul id="leftIcon" class="sidebar_i">
                     <li id="image_upload" class="menu_i">
                         <label for="uploader" class="uploader">
-                            <input type="file" id="uploader" style="display: none" />
+                            <input type="file" id="uploader" style="display: none" accept="image/*" />
                             <i class="material-icons">add_photo_alternate</i>
                         </label>
                     </li>
@@ -89,6 +89,7 @@
             <!-- Canvas -->
             <section class="canvas_area">
                 <canvas id="boneCanvas" class="boneCanvas"></canvas>
+                <div id="mouseXY"></div>
             </section>
 
             <aside class="aside">

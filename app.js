@@ -1,6 +1,8 @@
-// input > date
-document.getElementById("nav_date").value = new Date().toISOString().substring(0, 10);
-// tab menu
+// ! input > date
+let date = document.getElementById("nav_date");
+date.value = new Date().toISOString().substring(0, 10);
+
+// ! tab menu
 const tabList = document.querySelectorAll(".tab_menu .tab_btn li");
 for (let i = 0; i < tabList.length; i++) {
     tabList[i].querySelector(".tab_btns").addEventListener("click", function (changeTab) {
@@ -16,11 +18,24 @@ for (let i = 0; i < tabList.length; i++) {
 const canvas = document.getElementById("boneCanvas");
 const ctx = canvas.getContext("2d");
 
+// start__coordinate
+function coordinate(event) {
+    let x = event.offsetX; // X-coordinate
+    let y = event.offsetY; // y-coordinate\
+    console.log(x, y);
+}
+
+if (canvas) {
+    canvas.addEventListener("mousemove", coordinate);
+}
+
+// coordinate__end
+
 // start__image uploader
 const reader = new FileReader();
 const img = new Image();
 
-const uploadImage = (e) => {
+const uploadImage = (upload) => {
     reader.onload = () => {
         img.onload = () => {
             canvas.width = img.width;
@@ -29,7 +44,7 @@ const uploadImage = (e) => {
         };
         img.src = reader.result;
     };
-    reader.readAsDataURL(e.target.files[0]);
+    reader.readAsDataURL(upload.target.files[0]);
 };
 const imageLeader = document.getElementById("uploader");
 imageLeader.addEventListener("change", uploadImage);
