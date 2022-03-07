@@ -19,10 +19,20 @@ const canvas = document.getElementById("boneCanvas");
 const ctx = canvas.getContext("2d");
 
 // start__coordinate
-function coordinate(event) {
-    let x = event.offsetX; // X-coordinate
-    let y = event.offsetY; // y-coordinate\
-    console.log(x, y);
+// function coordinate(event) {
+//     let x = event.offsetX; // X-coordinate
+//     let y = event.offsetY; // y-coordinate\
+//     console.log(x, y);
+// }
+
+function coordinate(event, element) {
+    var rect = element[0].getBoundingClientRect();
+    var x = event.pageX - rect.left;
+    var y = event.pageY - rect.top;
+    return {
+        x: x,
+        y: y,
+    };
 }
 
 if (canvas) {
