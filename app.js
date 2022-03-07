@@ -14,18 +14,17 @@ for (let i = 0; i < tabList.length; i++) {
 
 // ! Canvas
 const canvas = document.getElementById("boneCanvas");
-// Pixel Control == 2D
 const ctx = canvas.getContext("2d");
 
-// image uploader
+// start__image uploader
 const reader = new FileReader();
-const image = new Image();
+const img = new Image();
 
 const uploadImage = (e) => {
     reader.onload = () => {
-        image.onload = () => {
+        img.onload = () => {
             canvas.width = img.width;
-            canvas.hight = img.hight;
+            canvas.height = img.height;
             ctx.drawImage(img, 0, 0);
         };
         img.src = reader.result;
@@ -34,9 +33,8 @@ const uploadImage = (e) => {
 };
 const imageLeader = document.getElementById("uploader");
 imageLeader.addEventListener("change", uploadImage);
-
-// canvas.width = ;
-// canvas.height = ;
+// image uploader__end
+// image download
 
 // 선 색상
 // ctx.strokeStyle = "";
