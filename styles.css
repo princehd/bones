@@ -247,7 +247,7 @@ body {
 
 /* start_index.html */
 /* start__header */
-.header {
+header {
     position: relative;
     z-index: 3;
     background-color: #323232;
@@ -309,22 +309,22 @@ body {
 
 /* navbar__end */
 /* header__end */
+
+/* start__main */
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
 /* start__sidebar */
 .sidebar {
-    position: relative;
-    display: flex;
-    height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
-}
-
-.sidebar_left {
-    position: absolute;
-    display: flex;
     display: flex;
     justify-content: center;
     width: 3vw;
     height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
     background-color: #323232;
 }
 
@@ -351,29 +351,35 @@ body {
     border: none;
     cursor: pointer;
 }
+/* sidebar__end */
 
-.sidebar_right {
+/* start__section */
+
+.boneCanvas {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+/* section__end */
+
+/* start__aside */
+.aside {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     align-items: center;
+    justify-content: space-between;
     width: 25vw;
     height: 100%;
-    margin-left: auto;
     background-color: #323232;
 }
 
-#sideTabMenu {
-    list-style: none;
-}
-
-.side_btn {
+.aside_btn {
     margin: 0 auto;
     margin-top: 10%;
 }
 
 .btn_ai {
-    position: relative;
-    padding: 0.6vmax 5vmax 0.6vmax 5vmax;
+    padding: 0.6vmax 4vmax 0.6vmax 4vmax;
     color: #323232;
     font-weight: 700;
     font-size: 1.6rem;
@@ -390,13 +396,13 @@ body {
     border: 2px solid whitesmoke;
     transition: all 0.2s ease;
 }
-
 /* start__tabMenu */
 .tab_menu {
-    position: absolute;
+    position: relative;
     display: flex;
-    width: 25vw;
-    height: 100vh;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
     margin-top: 8%;
     text-decoration: none;
 }
@@ -442,24 +448,7 @@ body {
 .tab_menu .tab_btn li.tab_menus .tab_cont {
     display: block;
 }
-
 /* tabMenu__end */
-/* sidebar__end */
-/* start__canvasApi */
+/* aside__end */
 
-.canvas {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: auto;
-}
-
-.boneCanvas {
-    width: calc(100vw - 29vw);
-    height: calc(100vh -10vh);
-    height: 100%;
-    overflow: auto;
-}
-/* canvasApi__end */
 /* index.html_end */
