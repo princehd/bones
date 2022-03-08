@@ -18,33 +18,9 @@ for (let i = 0; i < tabList.length; i++) {
 const canvas = document.getElementById("boneCanvas");
 const ctx = canvas.getContext("2d");
 
-// start__coordinate
-// function coordinate(event) {
-//     let x = event.offsetX; // X-coordinate
-//     let y = event.offsetY; // y-coordinate\
-//     console.log(x, y);
-// }
-
-function coordinate(event, element) {
-    var rect = element[0].getBoundingClientRect();
-    var x = event.pageX - rect.left;
-    var y = event.pageY - rect.top;
-    return {
-        x: x,
-        y: y,
-    };
-}
-
-if (canvas) {
-    canvas.addEventListener("mousemove", coordinate);
-}
-
-// coordinate__end
-
 // start__image uploader
 const reader = new FileReader();
 const img = new Image();
-
 const uploadImage = (upload) => {
     reader.onload = () => {
         img.onload = () => {
@@ -61,5 +37,60 @@ imageLeader.addEventListener("change", uploadImage);
 // image uploader__end
 // image download
 
-// 선 색상
-// ctx.strokeStyle = "";
+// start__coordinate
+function coordinate(event) {
+    let xy = document.getElementById("xy");
+    let x = event.offsetX; // X-coordinate
+    let y = event.offsetY; // y-coordinate\
+    console.log(x, y); //좌표찍기
+    xy.innerText = x + " " + y;
+
+    if (!pointMode) {
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    } else {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+}
+// coordinate__end
+
+// start__sidebar
+const mode = document.getElementsByClassName("menu_i");
+
+function handelModeClick(event) {
+    if (pointMode === true) {
+        pointMode = false;
+    } else {
+        pointMode = true;
+    }
+}
+
+// draw point
+let pointMode = false;
+
+function pointClick() {
+    if (canvas.getContext) {
+        ctx.beginPath();
+        ctx.arc(0, 0, 100, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+}
+// sidebar__end
+
+if (canvas) {
+    canvas.addEventListener("mousemove", coordinate); // 캔버스 안 마우스 움직임
+    canvas.addEventListener("mousedown", startPoint); // 마우스 클릭
+    canvas.addEventListener("mouseup", stopPoint);
+    canvas.addEventListener("mouseleave", stopPoint);
+    //canvas.addEventListener("click", handleCanvasClick); // 포인터
+}
+
+if (mode) {
+    mode.addEventListener("click", handelModeClick);
+}
+
+// 1. 저버튼을 누른다
+// 2. 클릭시 해당좌표(coordinate의 x,y)에 점이 찍힌다.(곧 이벤트함수를 써야한다)
+// 3. 저 버튼이 눌러있는 동안은 항상 점이 찍힌다
+// 4. 저 버튼을 또 누르면 비활성
