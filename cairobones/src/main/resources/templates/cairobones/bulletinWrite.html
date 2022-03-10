@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{/bulletinWrite}"><br>
+    <input type="text" name="article_title" placeholder="제목"><br>
+    <input type="text" name="doctor_id" th:value="${session.doctor_id}" readonly="readonly"><br>
+    <textarea name="article_content" placeholder="내용"></textarea><br>
+    <input type="file" name="article_file"><br>
+    <input type="submit" value="저장">
+    <input type="reset" value="취소">
+    <input type="submit" value="목록" th:formaction="@{/getBulletin}">
+</form>
+</body>
+</html>

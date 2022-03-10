@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form role="form" th:object=${tbl_bulletinVO}
+      th:action="@{/bulletinUpdate/{articleSeq}(articleSeq=${detail.article_seq})}" method="post">
+    <div>
+        <label style="font-weight: bolder;">제목</label>
+        <input type="text" th:field="${detail.article_title}">
+    </div>
+    <div>
+        <label style="font-weight: bolder;">작성자</label>
+        <p th:text="${detail.doctor_id}"></p>
+    </div>
+    <div>
+        <label style="font-weight: bolder;">작성일자</label>
+        <p th:text="${detail.article_date}"></p>
+    </div>
+    <div>
+        <label style="font-weight: bolder;">첨부파일</label>
+    </div>
+    <div>
+        <label style="font-weight: bolder;">내용</label>
+        <input type="text" th:field="${detail.article_content}">
+    </div>
+    <div style="text-align: right;">
+        <input type="submit" th:value="목록"
+               th:formaction="@{/getBulletin}">
+        <input type="submit" th:value="저장">
+        <input type="submit" th:value="삭제"
+               th:formaction="@{/bulletinDelete/{articleSeq}(articleSeq=${detail.article_seq})}">
+    </div>
+</form>
+</body>
+</html>

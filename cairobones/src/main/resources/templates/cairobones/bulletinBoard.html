@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Bulletin Board</h1>
+
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>글 번호</th>
+      <th>작성일</th>
+      <th>제목</th>
+      <th>작성자</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data, index : ${getBulletin}"
+        th:onclick="'window.location.href = \'' + @{bulletinDetail/{article_seq}(article_seq=${data.article_seq})} + '\''">
+      <td th:text="${data.article_seq}"></td>
+      <td th:text="${data.article_date}"></td>
+      <td th:text="${data.article_title}"></td>
+      <td th:text="${data.doctor_id}"></td>
+      <!--<td></td>
+      <td>b</td>
+      <td>c</td>-->
+    </tr>
+    </tbody>
+
+  </table>
+
+  <button onclick="location.href='/goBulletinWrite'">글작성</button>
+</div>
+
+</body>
+</html>

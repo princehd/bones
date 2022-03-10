@@ -1,5 +1,7 @@
 package com.smhrd.cairobones.service;
 
+import com.smhrd.cairobones.VO.tbl_bulletinVO;
+import com.smhrd.cairobones.VO.tbl_commentVO;
 import com.smhrd.cairobones.VO.tbl_doctorVO;
 import com.smhrd.cairobones.VO.tbl_patientVO;
 import com.smhrd.cairobones.mapper.bonesMapper;
@@ -8,9 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -45,25 +50,39 @@ public class bonesService {
         return mapper.fileView(p_seq);
     }
 
-    /*public void fileUpload(tbl_patientVO tbl_patient, MultipartFile file) throws Exception{
-        // 저장 경로 설정
-        String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-
-        // 식별자(UUID) 이용해서 파일 이름 설정
-        // 랜덤으로 생성된 식별자 + _ + 파일이름 형식으로 저장됨.
-        UUID uuid = UUID.randomUUID();
-        String fileName = uuid + "_" + file.getOriginalFilename();
-
-        // File 클래스를 이용해서 저장
-        File saveFile = new File(projectPath, fileName);
-        file.transferTo(saveFile);
-
-        tbl_patient.setP_xraypath("/files/" + fileName);
-        mapper.fileUpload(tbl_patient);
+    public List<tbl_patientVO> getPatientList() {
+        return mapper.patientList();
     }
 
-    public tbl_patientVO fileView(int p_seq){
+    public tbl_patientVO detail(int p_seq) {
+        return mapper.detail(p_seq);
+    }
 
-        return p_seq;
-    }*/
+    public List<tbl_bulletinVO> getBulletin(){
+        return mapper.getBulletin();
+    }
+
+    public tbl_bulletinVO bulletinDetail(int article_seq){
+        return mapper.bulletinDetail(article_seq);
+    }
+
+    public int bulletinWrite(tbl_bulletinVO bulletinVO) {
+        return mapper.bulletinWrite(bulletinVO);
+    }
+
+    public int bulletinUpdate(tbl_bulletinVO bulletinVO){
+        return mapper.bulletinUpdate(bulletinVO);
+    }
+
+    public void bulletinDelete(int article_seq){
+        mapper.bulletinDelete(article_seq);
+    }
+
+    public void commentWrite(tbl_commentVO commentVO) {
+        mapper.commentWrite(commentVO);
+    }
+
+    public List<tbl_commentVO> getCommentList() {
+        return mapper.getCommentList();
+    }
 }

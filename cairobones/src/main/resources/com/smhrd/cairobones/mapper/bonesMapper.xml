@@ -15,12 +15,57 @@
 
     <!--환자 엑스레이 업로드-->
     <insert id="fileUpload" parameterType="com.smhrd.cairobones.VO.tbl_patientVO">
-        INSERT INTO tbl_patient(p_code, p_name, p_birthdate, p_xray)
-        VALUE(#{p_code},#{p_name},#{p_birthdate},#{p_xray})
+        INSERT INTO tbl_patient(doctor_id, p_code, p_name, p_birthdate, p_xray, p_xraypath)
+        VALUES(#{doctor_id},#{p_code},#{p_name},#{p_birthdate},#{p_xray}, #{p_xraypath})
     </insert>
 
-    <!--환자 엑스레이 불러오기-->
-    <select id="openFile" parameterType="int" resultType="com.smhrd.cairobones.VO.tbl_patientVO">
+    <!--엑스레이 리스트-->
+    <select id="patientList" resultType="com.smhrd.cairobones.VO.tbl_patientVO">
+        SELECT * FROM tbl_patient
+    </select>
+    
+    <!--detail-->
+    <select id="detail" parameterType="int" resultType="com.smhrd.cairobones.VO.tbl_patientVO">
         SELECT * FROM tbl_patient WHERE p_seq=#{p_seq}
+    </select>
+
+    <!--게시글 리스트-->
+    <select id="getBulletin" resultType="com.smhrd.cairobones.VO.tbl_bulletinVO">
+        SELECT * FROM tbl_bulletin ORDER BY article_seq
+    </select>
+
+    <!--게시글 상세-->
+    <select id="bulletinDetail" parameterType="int" resultType="com.smhrd.cairobones.VO.tbl_bulletinVO">
+        SELECT * FROM tbl_bulletin WHERE article_seq=#{article_seq}
+    </select>
+
+    <!--게시글 작성-->
+    <insert id="bulletinWrite" parameterType="com.smhrd.cairobones.VO.tbl_bulletinVO">
+        INSERT INTO tbl_bulletin(article_title, article_content, article_file, doctor_id)
+        VALUES(#{article_title}, #{article_content}, #{article_file}, #{doctor_id})
+    </insert>
+
+    <!--게시글 수정-->
+    <update id="bulletinUpdate" parameterType="com.smhrd.cairobones.VO.tbl_bulletinVO">
+        UPDATE tbl_bulletin SET
+        article_title=#{article_title},
+        article_content=#{article_content}
+        WHERE article_seq=#{article_seq}
+    </update>
+
+    <!--게시글 삭제-->
+    <delete id="bulletinDelete" parameterType="int">
+        DELETE FROM tbl_bulletin WHERE article_seq=#{article_seq}
+    </delete>
+
+    <!--댓글입력-->
+    <insert id="commentWrite" parameterType="com.smhrd.cairobones.VO.tbl_commentVO">
+        INSERT INTO tbl_comment(comment_content, article_seq, doctor_id)
+        VALUES(#{comment_content}, #{article_seq}, #{doctor_id})
+    </insert>
+
+    <!--댓글 출력-->
+    <select id="getCommentList" resultType="com.smhrd.cairobones.VO.tbl_commentVO">
+        SELECT * FROM tbl_commet WHERE article_seq=#{article_seq}
     </select>
 </mapper>

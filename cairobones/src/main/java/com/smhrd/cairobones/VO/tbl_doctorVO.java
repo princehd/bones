@@ -1,8 +1,11 @@
 package com.smhrd.cairobones.VO;
 
+import com.smhrd.cairobones.CairobonesApplication;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 @Data
 @NoArgsConstructor
