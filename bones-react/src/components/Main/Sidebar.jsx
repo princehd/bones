@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+// import React, { useState, useEffect } from "react";
 
 function Sidebar() {
-    const displayNone = {
+    const pointerStyle = {
+        cursor: "pointer",
+    };
+    const uploaderStyle = {
         display: "none",
     };
 
@@ -11,8 +15,10 @@ function Sidebar() {
                 <ul id="leftIcon" className="sidebar_i">
                     <li id="image_upload" className="menu_i">
                         <label for="uploader" className="uploader">
-                            <input type="file" id="uploader" style={displayNone} accept="image/*" />
-                            <i className="material-icons">add_photo_alternate</i>
+                            <input type="file" id="uploader" style={uploaderStyle} accept="image/*" />
+                            <i className="material-icons" style={pointerStyle}>
+                                add_photo_alternate
+                            </i>
                         </label>
                     </li>
                     <li id="coordinate" className="menu_i">

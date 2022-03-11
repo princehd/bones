@@ -216,35 +216,9 @@ main {
     list-style: none;
 }
 
-.tab_btn li {
-    float: left;
-    margin: 0 auto;
-}
-
-.tab_menu .tab_btn .tab_btns {
+.listBox {
     display: felx;
     color: whitesmoke;
     font-size: 13px;
     text-decoration: none;
-}
-
-.tab_menu .tab_btn .tab_cont {
-    position: absolute;
-    left: 0;
-    display: none;
-    width: 100%;
-    height: 100vh;
-    color: whitesmoke;
-    line-height: 100%;
-    text-align: center;
-    background: black;
-}
-
-.tab_menu .tab_btn li.tab_menus .tab_btns {
-    color: #888;
-    font-weight: bold;
-}
-
-.tab_menu .tab_btn li.tab_menus .tab_cont {
-    display: block;
 }

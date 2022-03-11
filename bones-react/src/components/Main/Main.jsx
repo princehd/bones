@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
 import Sidebar from "./Sidebar";
 import Aside from "./Aside";
+import "./index.css";
 
 function Main() {
     const [src, setSrc] = useState("");
     const canvasRef = useRef(null);
     const image = new Image();
     const urlReader = new FileReader();
+
     const onClickUploadButton = ({ target }) => {
         if (!target.files.length) {
             return;

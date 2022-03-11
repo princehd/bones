@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header() {
-    const value = new Date().toISOString().substring(0, 10);
+    const dateValue = new Date().toISOString().substring(0, 10);
 
     return (
         <div>
@@ -36,7 +36,7 @@ function Header() {
                         <span className="nav_vl"></span>
                         <li>
                             Date
-                            <input type="date" id="nav_date" className="nav_box" value={value} />
+                            <input type="date" id="nav_date" className="nav_box" value={dateValue} />
                         </li>
                     </ul>
                 </nav>

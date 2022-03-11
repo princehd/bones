@@ -1,6 +1,6 @@
 // ! input > date
-let date = document.getElementById("nav_date");
-date.value = new Date().toISOString().substring(0, 10);
+// let date = document.getElementById("nav_date");
+// date.value = new Date().toISOString().substring(0, 10);
 
 // ! tab menu
 const tabList = document.querySelectorAll(".tab_menu .tab_btn li");
