@@ -57,7 +57,6 @@ function coordinate(event) {
 
 // start__sidebar
 const mode = document.getElementsByClassName("menu_i");
-
 function handelModeClick(event) {
     if (pointMode === true) {
         pointMode = false;
