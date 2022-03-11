@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 export default class TabContanier extends Component {
     renderTab = (tab, i) => {
         const { updateIndex = () => {} } = this.props;

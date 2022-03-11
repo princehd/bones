@@ -5,7 +5,6 @@ import Registration from "./TabMenu/Registration";
 import Examination from "./TabMenu/Examination";
 import Patient from "./TabMenu/Patient";
 import Platform from "./TabMenu/Platform";
-
 export default class Aside extends Component {
     constructor(props) {
         super(props);
@@ -30,7 +29,7 @@ export default class Aside extends Component {
                         </button>
                     </div>
                     <div id="tabMenu" className="tab_menu">
-                        <TabContainer index={index} updateIndex={this.updateIndex} className="tab_btn">
+                        <TabContainer index={index} updateIndex={this.updateIndex}>
                             <TabMenu title="환자 등록" className="listBox">
                                 <Registration />
                             </TabMenu>
