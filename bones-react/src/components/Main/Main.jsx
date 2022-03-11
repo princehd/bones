@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import Sidebar from "./Sidebar";
 import Aside from "./Aside";
-import "./index.css";
 
 function Main() {
     const [src, setSrc] = useState("");
