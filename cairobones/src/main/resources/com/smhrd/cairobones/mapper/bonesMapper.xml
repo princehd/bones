@@ -66,6 +66,19 @@
 
     <!--댓글 출력-->
     <select id="getCommentList" resultType="com.smhrd.cairobones.VO.tbl_commentVO">
-        SELECT * FROM tbl_commet WHERE article_seq=#{article_seq}
+        SELECT * FROM tbl_comment WHERE article_seq=#{article_seq}
     </select>
+
+    <!--댓글 수정-->
+    <update id="commentUpdate" parameterType="com.smhrd.cairobones.VO.tbl_commentVO">
+        UPDATE tbl_comment SET
+        comment_content=#{comment_content}
+        WHERE comment_seq=#{comment_seq}
+    </update>
+
+    <!--댓글 삭제-->
+    <delete id="commentDelete" parameterType="int">
+        DELETE FROM tbl_comment WHERE comment_seq=#{comment_seq}
+    </delete>
+
 </mapper>

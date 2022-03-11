@@ -196,12 +196,19 @@ public class bonesController {
         return new RedirectView("/bulletinDetail/"+article_seq);
     }
 
-    @RequestMapping("/getCommentList/{article_seq}")
-    private String getCommentList(Model model, HttpServletRequest request){
-        List<tbl_commentVO> CommentList = new ArrayList<>();
-        CommentList = service.getCommentList();
-        model.addAttribute("getCommentList", CommentList);
-        return "cairobones/bulletinDetail";
+    @RequestMapping("/commentUpdate/{comment_seq}")
+    private RedirectView commentUpdate(@PathVariable("comment_content") String comment_content,
+                                       @RequestParam int article_seq){
+        tbl_commentVO commentVO = new tbl_commentVO();
+        commentVO.setComment_content(comment_content);
+        service.commentUpdate(commentVO);
+        return new RedirectView("/bulletinDetail/"+article_seq);
+    }
+
+    @RequestMapping("/commentDelete/{comment_seq}")
+    private RedirectView commentDelete(@PathVariable("comment_seq") int comment_seq, @RequestParam int article_seq){
+        service.commentDelete(comment_seq);
+        return new RedirectView("/bulletinDetail/"+article_seq);
     }
 
 }

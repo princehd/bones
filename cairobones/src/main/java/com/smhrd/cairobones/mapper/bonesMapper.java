@@ -26,5 +26,7 @@ public interface bonesMapper {
     int bulletinUpdate(tbl_bulletinVO bulletinVO);
     void bulletinDelete(int article_seq);
     void commentWrite(tbl_commentVO commentVO);
-    List<tbl_commentVO> getCommentList();
+    List<tbl_commentVO> getCommentList(int article_seq);
+    void commentUpdate(tbl_commentVO commentVO);
+    void commentDelete(int comment_seq);
 }

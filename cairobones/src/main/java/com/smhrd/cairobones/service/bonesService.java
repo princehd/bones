@@ -82,7 +82,15 @@ public class bonesService {
         mapper.commentWrite(commentVO);
     }
 
-    public List<tbl_commentVO> getCommentList() {
-        return mapper.getCommentList();
+    public List<tbl_commentVO> getCommentList(int article_seq) {
+        return mapper.getCommentList(article_seq);
+    }
+
+    public void commentUpdate(tbl_commentVO commentVO) {
+        mapper.commentUpdate(commentVO);
+    }
+
+    public void commentDelete(int comment_seq) {
+        mapper.commentDelete(comment_seq);
     }
 }
