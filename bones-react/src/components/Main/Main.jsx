@@ -1,13 +1,11 @@
 import React, { useState, useRef } from "react";
-import Sidebar from "./Sidebar";
+import SideBar from "./SideBar";
 import Aside from "./Aside";
-
 function Main() {
     const [src, setSrc] = useState("");
-    const canvasRef = useRef(null);
+    const canvasRef = useRef(null); // 캔버스 참조
     const image = new Image();
     const urlReader = new FileReader();
-
     const onClickUploadButton = ({ target }) => {
         if (!target.files.length) {
             return;
@@ -33,14 +31,11 @@ function Main() {
     return (
         <div>
             <main>
-                <Sidebar onClickUploadButton={onClickUploadButton} />
+                <SideBar onClickUploadButton={onClickUploadButton} />
                 <img src={src} alt="" />
-
                 <section className="canvas_area">
-                    <canvas id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas>
-                    <div id="mouseXY"></div>
+                    <canvas id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas> <div id="mouseXY"></div>{" "}
                 </section>
-
                 <Aside />
             </main>
         </div>
