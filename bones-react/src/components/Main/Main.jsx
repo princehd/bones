@@ -19,6 +19,7 @@ function Main() {
                 if (!canvasRef || !canvasRef.current) {
                     return;
                 }
+
                 const canvas = canvasRef.current;
                 const context = canvas.getContext("2d");
                 canvas.width = image.width;
@@ -33,10 +34,11 @@ function Main() {
     return (
         <div>
             <main>
-                <Sidebar onClickUploadButton={onClickUploadButton} />
+                <Sidebar onClickUploadButton={onClickUploadButton} onClick={() => {}} />
                 <img src={src} alt="" />
                 <section className="canvas_area">
-                    <canvas id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas> <div id="mouseXY"></div>{" "}
+                    <canvas id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas>
+                    <div id="mouseXY"></div>
                 </section>
                 <Aside />
             </main>

@@ -2,7 +2,7 @@ import React from "react";
 // import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ onClickUploadButton }) {
     const pointerStyle = {
         cursor: "pointer",
     };
@@ -15,7 +15,7 @@ function Sidebar() {
             <ul id="leftIcon" className="sidebar_i">
                 <li id="image_upload" className="menu_i">
                     <label htmlFor="uploader" className="uploader">
-                        <input type="file" id="uploader" style={uploaderStyle} accept="image/*" />
+                        <input type="file" id="uploader" style={uploaderStyle} accept="image/*" onChange={onClickUploadButton} />
                         <i className="material-icons" style={pointerStyle}>
                             add_photo_alternate
                         </i>

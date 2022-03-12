@@ -30,7 +30,7 @@ export default class Aside extends Component {
                 </div>
                 <div id="tabMenu" className="tab_menu">
                     <TabContainer index={index} updateIndex={this.updateIndex}>
-                        <TabMenu title="Registration" className="list_Box" style={"border-left : none;"}>
+                        <TabMenu title="Registration" className="list_Box">
                             <Registration />
                         </TabMenu>
                         <TabMenu title="Diagnosis" className="list_Box">
