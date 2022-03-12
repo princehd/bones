@@ -30,16 +30,16 @@ export default class Aside extends Component {
                 </div>
                 <div id="tabMenu" className="tab_menu">
                     <TabContainer index={index} updateIndex={this.updateIndex}>
-                        <TabMenu title="환자 등록" className="list_Box">
+                        <TabMenu title="Registration" className="list_Box" style={"border-left : none;"}>
                             <Registration />
                         </TabMenu>
-                        <TabMenu title="환자 진찰" className="list_Box">
+                        <TabMenu title="Diagnosis" className="list_Box">
                             <Examination />
                         </TabMenu>
-                        <TabMenu title="환자 정보" className="list_Box">
+                        <TabMenu title="Info" className="list_Box">
                             <Patient />
                         </TabMenu>
-                        <TabMenu title="공유 플랫폼" className="list_Box">
+                        <TabMenu title="Sharing" className="list_Box">
                             <Platform />
                         </TabMenu>
                     </TabContainer>
