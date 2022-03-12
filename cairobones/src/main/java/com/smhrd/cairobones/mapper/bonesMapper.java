@@ -1,9 +1,6 @@
 package com.smhrd.cairobones.mapper;
 
-import com.smhrd.cairobones.VO.tbl_bulletinVO;
-import com.smhrd.cairobones.VO.tbl_commentVO;
-import com.smhrd.cairobones.VO.tbl_doctorVO;
-import com.smhrd.cairobones.VO.tbl_patientVO;
+import com.smhrd.cairobones.VO.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -29,4 +26,13 @@ public interface bonesMapper {
     List<tbl_commentVO> getCommentList(int article_seq);
     void commentUpdate(tbl_commentVO commentVO);
     void commentDelete(int comment_seq);
+
+    /* 랜드마크 / 계산값 */
+    List<tbl_bones_pointVO> getLandmark(int p_seq);
+    int landmarkChange(tbl_bones_pointVO bonesPointVO);
+    List<tbl_point_valueVO> landmarkValue(int point_seq);
+    int valueChange(tbl_point_valueVO pointValueVO);
+
+    /*환자 진단/처방*/
+    int patientPre(tbl_patientVO patientVO);
 }

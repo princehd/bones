@@ -53,7 +53,11 @@
             $("#commentUpdate"+comment_seq).html(newBtn);
         }
 
-        function updateBtn(comment_seq){
+        function updateBtn(){
+            location.href = "/commentUpdate/" + comment_seq;
+        }
+
+        /*function updateBtn(comment_seq){
             var updateUrl = "/commentUpdate/";
             var updateComment = comment_seq;
             var comment_content = $("#nc"+comment_seq).val();
@@ -68,12 +72,12 @@
 
             });
 
-        }
+        }*/
 
-        function answerEditSave(answer_idx, qna_idx){
+        /*function answerEditSave(answer_idx, qna_idx){
             var acontent = $("#edit_acontent"+answer_idx).val();
             location.href='answerEdit.do?idx='+answer_idx+"&acontent="+acontent;
-        }
+        }*/
 
         function commentDelete(comment_seq) {
             var updateUrl = "/commentDelete/";

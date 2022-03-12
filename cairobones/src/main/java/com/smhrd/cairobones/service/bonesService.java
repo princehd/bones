@@ -1,9 +1,6 @@
 package com.smhrd.cairobones.service;
 
-import com.smhrd.cairobones.VO.tbl_bulletinVO;
-import com.smhrd.cairobones.VO.tbl_commentVO;
-import com.smhrd.cairobones.VO.tbl_doctorVO;
-import com.smhrd.cairobones.VO.tbl_patientVO;
+import com.smhrd.cairobones.VO.*;
 import com.smhrd.cairobones.mapper.bonesMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,5 +89,24 @@ public class bonesService {
 
     public void commentDelete(int comment_seq) {
         mapper.commentDelete(comment_seq);
+    }
+    public List<tbl_bones_pointVO> getLandmark(int p_seq){
+        return mapper.getLandmark(p_seq);
+    }
+
+    public int landmarkChange(tbl_bones_pointVO bonesPointVO){
+        return mapper.landmarkChange(bonesPointVO);
+    }
+
+    public List<tbl_point_valueVO> landmarkValue(int point_seq){
+        return mapper.landmarkValue(point_seq);
+    }
+
+    public int valueChange(tbl_point_valueVO pointValueVO){
+        return mapper.valueChange(pointValueVO);
+    }
+
+    public int patientPre(tbl_patientVO patientVO){
+        return mapper.patientPre(patientVO);
     }
 }
