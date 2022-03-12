@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import SideBar from "./SideBar";
+import Sidebar from "./Sidebar";
 import Aside from "./Aside";
 function Main() {
     const [src, setSrc] = useState("");
@@ -31,7 +31,7 @@ function Main() {
     return (
         <div>
             <main>
-                <SideBar onClickUploadButton={onClickUploadButton} />
+                <Sidebar onClickUploadButton={onClickUploadButton} />
                 <img src={src} alt="" />
                 <section className="canvas_area">
                     <canvas id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas> <div id="mouseXY"></div>{" "}
