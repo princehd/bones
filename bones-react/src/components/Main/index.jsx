@@ -1,12 +1,12 @@
 import React from "react";
 // import React, { useState, useEffect } from "react";
-import "./index.css";
 import Header from "./Header";
 import Main from "./Main";
+import "./index.css";
 
 function MainPage() {
     return (
-        <div>
+        <div className="bodyStyle">
             <Header />
             <Main />
         </div>

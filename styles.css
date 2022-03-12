@@ -382,7 +382,7 @@ main {
 /* section__end */
 
 /* start__aside */
-.aside {
+/* .aside {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -414,9 +414,9 @@ main {
     background-color: transparent;
     border: 2px solid whitesmoke;
     transition: all 0.2s ease;
-}
+} */
 /* start__tabMenu */
-.tab_menu {
+/* .tab_menu {
     position: relative;
     display: flex;
     flex-flow: column;
@@ -466,7 +466,7 @@ main {
 
 .tab_menu .tab_btn li.tab_menus .tab_cont {
     display: block;
-}
+} */
 /* tabMenu__end */
 /* aside__end */
 

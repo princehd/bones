@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./TabMenu.css";
 export default class TabContanier extends Component {
     renderTab = (tab, i) => {
         const { updateIndex = () => {} } = this.props;
@@ -27,8 +28,8 @@ export default class TabContanier extends Component {
         const kid = children[index];
         const tabs = children.map(this.renderTab);
         return (
-            <div className="TabContainer">
-                <div className="tabTitBox">{tabs}</div>
+            <div className="tabContainer">
+                <div className="tabBtn">{tabs}</div>
                 <div className="tabKid">{kid}</div>
             </div>
         );

@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import Sidebar from "./Sidebar";
 import Aside from "./Aside";
+import "./Main.css";
+
 function Main() {
     const [src, setSrc] = useState("");
     const canvasRef = useRef(null); // 캔버스 참조

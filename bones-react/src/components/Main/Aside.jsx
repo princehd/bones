@@ -5,6 +5,7 @@ import Registration from "./TabMenu/Registration";
 import Examination from "./TabMenu/Examination";
 import Patient from "./TabMenu/Patient";
 import Platform from "./TabMenu/Platform";
+import "./Aside.css";
 export default class Aside extends Component {
     constructor(props) {
         super(props);
@@ -21,31 +22,29 @@ export default class Aside extends Component {
         const { index } = this.state;
 
         return (
-            <div>
-                <aside className="aside">
-                    <div id="asideAiBtn" className="aside_btn">
-                        <button id="btnAI" className="btn_ai" type="button">
-                            ChiroBones
-                        </button>
-                    </div>
-                    <div id="tabMenu" className="tab_menu">
-                        <TabContainer index={index} updateIndex={this.updateIndex}>
-                            <TabMenu title="환자 등록" className="listBox">
-                                <Registration />
-                            </TabMenu>
-                            <TabMenu title="환자 진찰" className="listBox">
-                                <Examination />
-                            </TabMenu>
-                            <TabMenu title="환자 정보" className="listBox">
-                                <Patient />
-                            </TabMenu>
-                            <TabMenu title="공유 플랫폼" className="listBox">
-                                <Platform />
-                            </TabMenu>
-                        </TabContainer>
-                    </div>
-                </aside>
-            </div>
+            <aside className="aside">
+                <div id="asideAiBtn" className="aside_btn">
+                    <button id="btnAI" className="btn_ai" type="button">
+                        ChiroBones
+                    </button>
+                </div>
+                <div id="tabMenu" className="tab_menu">
+                    <TabContainer index={index} updateIndex={this.updateIndex}>
+                        <TabMenu title="환자 등록" className="list_Box">
+                            <Registration />
+                        </TabMenu>
+                        <TabMenu title="환자 진찰" className="list_Box">
+                            <Examination />
+                        </TabMenu>
+                        <TabMenu title="환자 정보" className="list_Box">
+                            <Patient />
+                        </TabMenu>
+                        <TabMenu title="공유 플랫폼" className="list_Box">
+                            <Platform />
+                        </TabMenu>
+                    </TabContainer>
+                </div>
+            </aside>
         );
     }
 }
