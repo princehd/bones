@@ -5,14 +5,6 @@ main {
     height: 100%;
 }
 
-/* start__section > canvas */
-.canvas_area {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
 #mouseXY {
     position: fixed; /* Sit on top of the screen */
     bottom: 30px; /* 30px from the bottom */
