@@ -32,16 +32,14 @@ function Main() {
     };
 
     return (
-        <div>
-            <main>
-                <Sidebar onClickUploadButton={onClickUploadButton} />
-                <section className="canvas_area">
-                    <canvas src={src} id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas>
-                    <div id="mouseXY"></div>
-                </section>
-                <Aside />
-            </main>
-        </div>
+        <main>
+            <Sidebar onClickUploadButton={onClickUploadButton} />
+            <section className="canvas_area">
+                <canvas src={src} id="boneCanvas" className="boneCanvas" ref={canvasRef}></canvas>
+                <div id="mouseXY"></div>
+            </section>
+            <Aside />
+        </main>
     );
 }
 
