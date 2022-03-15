@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+
 import Sidebar from "./Sidebar";
-import Aside from "./Aside";
+import Aside2 from "./Aside2";
 import "./Main.css";
 
 let bool = false;
