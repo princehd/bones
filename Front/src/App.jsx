@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Join from "./components/Join";
 import Login from "./components/Login";
 import Main from "./components/Main";

@@ -43,47 +43,29 @@ function Main() {
         urlReader.readAsDataURL(uploadedImage);
     };
 
-    const startDrawing = () => {
-        setIsDrawing(bool);
+    const finishDrawing = ({ nativeEvent }) => {
         console.log(bool);
-    };
-
-    const finishDrawing = () => {
-        setIsDrawing(false);
-    };
-
-    const drawing = ({ nativeEvent }) => {
+        setIsDrawing(bool);
         const { offsetX, offsetY } = nativeEvent;
-        if (ctx) {
-            if (!isDrawing) {
-                ctx.beginPath();
-                ctx.moveTo(offsetX, offsetY);
-            } else {
-                ctx.lineTo(offsetX, offsetY);
-                ctx.stroke();
-            }
-        }
+
+        ctx.beginPath();
+        ctx.moveTo(offsetX, offsetY);
+        ctx.arc(offsetX, offsetY, 5, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
     };
 
     const startDrawing2 = () => {
         bool = true;
-        console.log(1);
     };
 
     return (
         <main>
             <Sidebar onClickUploadButton={onClickUploadButton} startDrawing2={startDrawing2} />
+
             <section className="canvas_area">
-                <canvas
-                    src={src}
-                    id="boneCanvas"
-                    className="boneCanvas"
-                    ref={canvasRef}
-                    onMouseDown={startDrawing}
-                    onMouseUp={finishDrawing}
-                    onMouseMove={drawing}
-                    onMouseLeave={finishDrawing}
-                ></canvas>
+                <canvas src={src} id="boneCanvas" className="boneCanvas" ref={canvasRef} onMouseUp={finishDrawing} onMouseLeave={finishDrawing}></canvas>
                 <div id="mouseXY"></div>
             </section>
             <Aside />

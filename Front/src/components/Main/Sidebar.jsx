@@ -14,7 +14,7 @@ function Sidebar({ onClickUploadButton, startDrawing2 }) {
         <aside className="sidebar">
             <ul id="leftIcon" className="sidebar_i">
                 <li id="image_upload" className="menu_i">
-                    <label htmlFor="uploaderSSSSSSSSSSSSSSSSSSSS" className="uploader">
+                    <label htmlFor="uploader" className="uploader">
                         <input type="file" id="uploader" style={uploaderStyle} accept="image/*" onChange={onClickUploadButton} />
                         <i className="material-icons" style={pointerStyle}>
                             add_photo_alternate

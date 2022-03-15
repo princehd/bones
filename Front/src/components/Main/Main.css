@@ -5,11 +5,12 @@ main {
 
 .canvas_area {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .boneCanvas {
     max-width: calc(100vw - 25vw - 3vw);
+    margin-top: 2em;
 }
 
 #mouseXY {
