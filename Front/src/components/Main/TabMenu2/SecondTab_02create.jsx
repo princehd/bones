@@ -2,7 +2,8 @@ import React from "react";
 
 function secondTab_01create() {
     return (
-        <div className="bodyStyle">
+        <div>
+            게시판 작성
         </div>
     );
 }

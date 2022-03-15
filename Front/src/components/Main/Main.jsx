@@ -68,7 +68,7 @@ function Main() {
                 <canvas src={src} id="boneCanvas" className="boneCanvas" ref={canvasRef} onMouseUp={finishDrawing} onMouseLeave={finishDrawing}></canvas>
                 <div id="mouseXY"></div>
             </section>
-            <Aside />
+            <Aside2 />
         </main>
     );
 }

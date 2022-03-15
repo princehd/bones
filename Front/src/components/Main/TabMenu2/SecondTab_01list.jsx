@@ -2,7 +2,8 @@ import React from "react";
 
 function secondTab_01list() {
     return (
-        <div className="bodyStyle">
+        <div>
+            게시판 목록
         </div>
     );
 }

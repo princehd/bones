@@ -2,7 +2,8 @@ import React from "react";
 
 function secondTab_03detail() {
     return (
-        <div className="bodyStyle">
+        <div>
+            게시판 세부사항
         </div>
     );
 }

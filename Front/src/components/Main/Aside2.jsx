@@ -6,10 +6,28 @@ import FirstTab_03info from "./TabMenu2/FirstTab_03info";
 import SecondTab_01list from "./TabMenu2/SecondTab_01list";
 import SecondTab_02create from "./TabMenu2/SecondTab_02create";
 import SecondTab_03detail from "./TabMenu2/SecondTab_03detail";
+
+import TabContainer from "./TabMenu/TabContainer";
+import TabMenu from "./TabMenu/TabMenu";
 import "./Aside.css";
 
 function Aside2() {
-    const [Tab, setTab] = useState(true);
+    const [dsc,setdsc] = useState(true);
+    const [index, setIndex] = useState(0);
+    const [pindex, setPindex] = useState(0);
+
+    const updateIndex = (index) => {
+        setIndex(index);
+        if(index==0){
+            setdsc(true);
+        }else{
+            setdsc(false);
+        }
+    };
+    const updatePindex = (pindex) => {
+        setPindex(pindex);
+    };
+
     return (
       <aside className="aside">
       <div id="asideAiBtn" className="aside_btn">
@@ -19,21 +37,31 @@ function Aside2() {
       </div>
       
       <div id="tabMenu" className="tab_menu">
-         { Tab ? <MinutesToHours /> : null}
-          <TabContainer index={index} updateIndex={this.updateIndex}>
-              <TabMenu title="Registration" className="list_Box">
-                  <Registration />
-              </TabMenu>
-              <TabMenu title="Diagnosis" className="list_Box">
-                  <Examination />
-              </TabMenu>
-              <TabMenu title="Info" className="list_Box">
-                  <Patient />
+          <TabContainer index={index} updateIndex={updateIndex}>
+              <TabMenu title="Patient Care" className="list_Box">
+                    {/* 환자목록 */}
               </TabMenu>
               <TabMenu title="Sharing" className="list_Box">
-                  <Platform />
+                    {/* 게시판 목록 */}
+                    <SecondTab_01list />
+              </TabMenu>
+          </TabContainer> 
+        {dsc?
+          <TabContainer index={pindex} updateIndex={updatePindex}>
+              <TabMenu title="Registration" className="list_Box">
+                    {/* 환자 등록 */}
+                    <FirstTab_01input />
+              </TabMenu>
+              <TabMenu title="Diagnosis" className="list_Box">
+                    {/* 환자 진단 */}
+                    <FirstTab_02diagnosis />
+              </TabMenu>
+              <TabMenu title="Info" className="list_Box">
+                    {/* 환자 정보 */}
+                    <FirstTab_03info />
               </TabMenu>
           </TabContainer>
+        :"???"}
       </div>
   </aside>
     );

@@ -2,7 +2,8 @@ import React from "react";
 
 function firstTab_03info() {
     return (
-        <div className="bodyStyle">
+        <div>
+            환자 정보
         </div>
     );
 }
