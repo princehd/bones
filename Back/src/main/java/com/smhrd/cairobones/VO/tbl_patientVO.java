@@ -18,4 +18,8 @@ public class tbl_patientVO {
     private String p_xraypath;
     private String p_diagnosis;
     private String p_prescription;
+    private String p_registdate;
+    private String p_diagnosisdate;
+    private String p_gender;
+    private String p_hospital;
 }

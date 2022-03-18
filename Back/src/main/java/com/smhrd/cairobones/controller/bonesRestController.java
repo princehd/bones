@@ -4,6 +4,7 @@ import com.mysql.cj.xdevapi.JsonArray;
 import com.mysql.cj.xdevapi.JsonString;
 import com.smhrd.cairobones.VO.tbl_bulletinVO;
 import com.smhrd.cairobones.VO.tbl_commentVO;
+import com.smhrd.cairobones.VO.tbl_patientVO;
 import com.smhrd.cairobones.service.bonesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,20 @@ public class bonesRestController {
     public void phm2(@RequestBody tbl_bulletinVO a){
         System.out.print(a.getArticle_seq());
     }
+
+    // ==================실제 데이터 전송================================================================================================================
+    // 환자 정보
+    @PostMapping("patient")
+    public List<tbl_patientVO> patinet(){
+        List<tbl_patientVO> patient_info = service.getPatientList();
+        System.out.print(patient_info);
+        return patient_info;
+    }
+
+
+
+
+
 }
 
 //List<tbl_bulletinVO> getBulletin();

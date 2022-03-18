@@ -13,11 +13,11 @@ function Table({ columns, data }) {
             </tr>
             </thead>
             <tbody>
-            {data.map(({ name, email, phone }) => (
-               <tr key={name + email + phone}>
-                  <td>{name}</td>
-                  <td>{email}</td>
-                  <td>{phone}</td>
+            {data.map(({ p_code, p_name, p_registdate }) => (
+               <tr key={p_code}>
+                  <td>{p_code}</td>
+                  <td>{p_name}</td>
+                  <td>{p_registdate.substr(0,11)}</td>
                </tr>
             ))}
             </tbody>

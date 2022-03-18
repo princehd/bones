@@ -6,7 +6,7 @@ import "./Main.css";
 
 let bool = false;
 
-function Main() {
+function Main({patient_info}) {
     const canvasRef = useRef(null); // 캔버스 참조
     const contextRef = useRef(null);
 
@@ -45,7 +45,7 @@ function Main() {
     };
 
     const finishDrawing = ({ nativeEvent }) => {
-        console.log(bool);
+        //console.log(bool);
         setIsDrawing(bool);
         const { offsetX, offsetY } = nativeEvent;
 
@@ -69,7 +69,7 @@ function Main() {
                 <canvas src={src} id="boneCanvas" className="boneCanvas" ref={canvasRef} onMouseUp={finishDrawing} onMouseLeave={finishDrawing}></canvas>
                 <div id="mouseXY"></div>
             </section>
-            <Aside2 />
+            <Aside2 patient_info={patient_info}/>
         </main>
     );
 }

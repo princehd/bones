@@ -15,18 +15,15 @@ import TabMenu from "./TabMenu/TabMenu";
 import "./Aside.css";
 
 
-function Aside2() {
+function Aside2({patient_info}) {
     const columns = ["Code", "Name", "Registeration"];
 
+    
 
 
-    const data = Array(53)
-        .fill()
-        .map(() => ({
-        name: '박현민',
-        email: 'dndb4902',
-        phone: '1111111',
-        }));
+    const data = patient_info;
+
+
 
     const [dsc,setdsc] = useState(true);
     const [index, setIndex] = useState(0);
