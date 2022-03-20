@@ -8,13 +8,13 @@ function firstTab_02diagnosis() {
                     <h3 className="join_title">
                         <label forhtml="joinId">Diagnosis</label>
                     </h3>
-                    <textarea value="상당히 아파보임,"></textarea>
+                    <textarea value=""></textarea>
                 </div>
                 <div className="join_form">
                     <h3 className="join_title">
                         <label forhtml="joinId">Prescription</label>
                     </h3>
-                    <textarea value="수면제                                      스테로이드                          진통제"></textarea>    
+                    <textarea value=""></textarea>    
                 </div>
                 <div className="joinBtn_area">
                     <button type="submit" id="joinBtn" aria-label="계정 생성">

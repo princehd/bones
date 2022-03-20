@@ -50,7 +50,7 @@ public class bonesRestController {
     @PostMapping("patient")
     public List<tbl_patientVO> patinet(){
         List<tbl_patientVO> patient_info = service.getPatientList();
-        System.out.print(patient_info);
+        // System.out.print(patient_info);
         return patient_info;
     }
 
