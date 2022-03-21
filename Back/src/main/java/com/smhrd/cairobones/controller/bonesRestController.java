@@ -54,7 +54,10 @@ public class bonesRestController {
         return patient_info;
     }
 
-
+    @RequestMapping("http://172.30.1.46:8080/fileUpload")
+    public void points(@RequestParam String res){
+        System.out.print(res);
+    }
 
 
 
